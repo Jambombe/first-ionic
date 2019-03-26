@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Mes TODOS
+
+      <button ion-button color="secondary" icon-only (click)="todoService.addTodoPrompt()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+
+      <button ion-button color="" icon-only (click)="todoService.setTodosDb()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <app-todo-list-item [todo]="todo" *ngFor="let todo of todoService.todos" ></app-todo-list-item>
+</ion-content>

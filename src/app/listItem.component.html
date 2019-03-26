@@ -1,0 +1,26 @@
+<!--<li (dblclick)="todosService.updateTodo(todo)">-->
+    <!--{{todo.nom}}-->
+    <!--<button (click)="delTodo(todo)">x</button>-->
+<!--</li>-->
+
+<!--<div class="card">-->
+    <!--<div class="card-body">-->
+  <!--<h5 class="card-title" (dblclick)="todosService.updateTodo(todo)"> {{todo.nom}} </h5>-->
+  <!--<button (click)="todosService.delTodo(todo.id)" class="btn btn-danger">X</button>-->
+<!--</div>-->
+<!--</div>-->
+
+<ion-card (click)="todosService.showModal(todo)">
+  <ion-card-header>
+    {{todo.nom}}
+  </ion-card-header>
+
+  <ion-card-content>
+    <button ion-button color="light" icon-only (click)="todosService.updateTodoPrompt(todo)">
+      <ion-icon name="create"></ion-icon>
+    </button>
+    <button ion-button color="danger" icon-only (click)="todosService.delTodo(todo.id)">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </ion-card-content>
+</ion-card>
